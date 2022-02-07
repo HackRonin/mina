@@ -11,7 +11,5 @@ class AppColor {
   static Color paleRed = HexColor("EB5757");
   static Color incomeStateColor = HexColor("828282");
   static Color balanceColor = HexColor("333333");
-
-
-  
 }
+const fabColor = Color(0xFF006AF6);

@@ -44,7 +44,6 @@ class AppTextStyle{
     color: AppColor.blackColor,
   );
 
-
   static TextStyle incomeTextStyle = GoogleFonts.inter(
     fontSize: 16.sp,
     fontWeight: FontWeight.w600,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:mina/app/config/app_color.dart';
 import 'package:sizer/sizer.dart';
 
 import 'app/routes/app_pages.dart';
@@ -22,9 +23,8 @@ class Mina extends StatelessWidget {
 
     const SystemUiOverlayStyle dark = SystemUiOverlayStyle(
         statusBarColor: Colors.white,
-        //systemNavigationBarColor: primaryColor,
-        //systemNavigationBarIconBrightness: Brightness.dark,
-        //systemNavigationBarDividerColor: primaryColor,
+        systemNavigationBarColor: fabColor,
+        systemNavigationBarIconBrightness: Brightness.dark,
         statusBarIconBrightness: Brightness.light);
     SystemChrome.setSystemUIOverlayStyle(dark);
 
@@ -35,8 +35,8 @@ class Mina extends StatelessWidget {
             theme: ThemeData(
               primarySwatch: Colors.blue,
             ),
-          //initialRoute: AppRoutes.login,
-          //getPages: AppPages.list,
+          initialRoute: AppRoutes.rootPage,
+          getPages: AppPages.list,
         );
       }
     );
