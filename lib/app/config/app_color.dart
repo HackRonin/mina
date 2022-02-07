@@ -10,6 +10,8 @@ class AppColor {
   static Color paleGreen = HexColor("6FCF97");
   static Color paleRed = HexColor("EB5757");
   static Color incomeStateColor = HexColor("828282");
+  static Color balanceColor = HexColor("333333");
+
 
   
 }
