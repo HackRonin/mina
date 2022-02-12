@@ -32,9 +32,9 @@ class Mina extends StatelessWidget {
       builder: (context, orientation, deviceType){
         return GetMaterialApp(
             debugShowCheckedModeBanner: false,
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
-            ),
+          theme: ThemeData(
+            primaryColor: AppColor.bgColor,
+          ),
           initialRoute: AppRoutes.rootPage,
           getPages: AppPages.list,
         );

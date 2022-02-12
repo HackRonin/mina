@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mina/presentation/features/root_page/components/all_expense/all_expense_page.dart';
 import 'package:mina/presentation/features/root_page/components/dashboard/dashboard_page.dart';
 
+import 'all_income.dart';
+
 class ScreenSwitch extends StatelessWidget {
   final String selectedValue;
 
@@ -20,9 +22,7 @@ class ScreenSwitch extends StatelessWidget {
         }
         // If width it less then 1100 and more then 650 we consider it as tablet
         else if (selectedValue == 'All Income') {
-          return Container(
-            color: Colors.blue,
-          );
+          return IncomePage();
         }
         // Or less then that we called it mobile
         else {
