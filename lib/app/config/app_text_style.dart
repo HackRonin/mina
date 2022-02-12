@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
+
 
 import 'app_color.dart';
 
 class AppTextStyle{
 
   static TextStyle screenTitleStyle = GoogleFonts.inter(
-    fontSize: 20.sp,
+    fontSize: 18.sp,
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     color: AppColor.blackColor,
   );
 
-  static TextStyle balanceTitleStyle = GoogleFonts.inter(
-    fontSize: 20.sp,
-    fontWeight: FontWeight.w600,
-    fontStyle: FontStyle.normal,
-    color: AppColor.incomeStateColor,
-  );
+  // static TextStyle balanceTitleStyle = GoogleFonts.inter(
+  //   fontSize: 20.sp,
+  //   fontWeight: FontWeight.w600,
+  //   fontStyle: FontStyle.normal,
+  //   color: AppColor.incomeStateColor,
+  // );
 
   static TextStyle balanceTextStyle = GoogleFonts.inter(
     fontSize: 20.sp,

@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mina/app/config/app_text_style.dart';
 import 'package:mina/app/config/app_color.dart';
 import 'package:mina/app/utils/utils.dart';
-import 'package:sizer/sizer.dart';
 import 'components/screen_switch.dart';
 
 class RootPageScreens extends StatefulWidget{
@@ -28,25 +28,28 @@ class _RootPageScreensState extends State<RootPageScreens> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.primaryColor,
-        leading:  DropdownButton(
-          value: dropDownValue,
-          icon:  Icon(Icons.keyboard_arrow_down, color: AppColor.blackColor,),
-          items: items.map((String items) {
-            return DropdownMenuItem(
-              value: items,
-              child: Text(items,
-                  style: AppTextStyle.screenTitleStyle
-              ),
-            );
-          }).toList(),
+        automaticallyImplyLeading: false,
+        title: DropdownButtonHideUnderline(
+          child: DropdownButton(
+            value: dropDownValue,
 
-          onChanged: (String? newValue) {
-            setState(() {
-              dropDownValue = newValue!;
-            });
-          },
+            icon:  Icon(Icons.keyboard_arrow_down, color: AppColor.blackColor,),
+            items: items.map((String items) {
+              return DropdownMenuItem(
+                value: items,
+                child: Text(items,
+                    style: AppTextStyle.screenTitleStyle
+                ),
+              );
+            }).toList(),
+
+            onChanged: (String? newValue) {
+              setState(() {
+                dropDownValue = newValue!;
+              });
+            },
+          ),
         ),
-        leadingWidth: 170.w,
         actions:[
           SvgPicture.asset(Utils.getIconPath('switch'), width: 24.w,height: 24.h,),
           //SizedBox(width: 39.w,),
@@ -82,28 +85,19 @@ class _RootPageScreensState extends State<RootPageScreens> {
           ),
         ],
       ),
-        floatingActionButton: SizedBox(
-          width: 56.w,
-          height: 56.h,
-          child: FloatingActionButton(
-            // isExtended: true,
-            child: Icon(Icons.add, color: AppColor.primaryColor,),
-            backgroundColor: AppColor.fabBtnColor,
-            onPressed: () {
-              setState(() {
+        floatingActionButton: FloatingActionButton(
+          // isExtended: true,
+          child: Icon(Icons.add, color: AppColor.primaryColor,),
+          backgroundColor: AppColor.fabBtnColor,
+          onPressed: () {
+            setState(() {
 
-              });
-            },
-          ),
+            });
+          },
         ),
       body: ScreenSwitch(selectedValue: dropDownValue,)
     );
   }
 
-  //  _popMenu({required int value, required String title}){
-  //   return PopupMenuItem<int>(
-  //     value: value,
-  //     child: Text(title, style: AppTextStyle.tagTextStyle, ),
-  //   );
-  // }
+
 }

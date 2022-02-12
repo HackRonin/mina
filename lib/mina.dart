@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:mina/app/config/app_color.dart';
-import 'package:sizer/sizer.dart';
+
 
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
@@ -28,17 +29,18 @@ class Mina extends StatelessWidget {
         statusBarIconBrightness: Brightness.light);
     SystemChrome.setSystemUIOverlayStyle(dark);
 
-    return Sizer(
-      builder: (context, orientation, deviceType){
-        return GetMaterialApp(
+    return ScreenUtilInit(
+        designSize: const Size(411, 823),
+        minTextAdapt: true,
+        splitScreenMode: true,
+      builder: () =>  GetMaterialApp(
             debugShowCheckedModeBanner: false,
           theme: ThemeData(
             primaryColor: AppColor.bgColor,
           ),
           initialRoute: AppRoutes.rootPage,
           getPages: AppPages.list,
-        );
-      }
+        )
     );
   }
 }

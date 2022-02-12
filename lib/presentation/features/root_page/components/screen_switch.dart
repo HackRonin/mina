@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mina/presentation/features/dashboard/dashboard_screen.dart';
+import 'package:mina/presentation/features/expense/expense_screen.dart';
 import '../../income/income_screen.dart';
 class ScreenSwitch extends StatelessWidget {
   final String selectedValue;
@@ -14,13 +16,13 @@ class ScreenSwitch extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (selectedValue == 'All Expense') {
-          return Container(color: Colors.black,);
+          return ExpenseScreen();
         }
         else if (selectedValue == 'All Income') {
           return IncomeScreen();
         }
         else  {
-          return  Container(color: Colors.red,);
+          return  DashboardScreen();
         }
       },
     );
