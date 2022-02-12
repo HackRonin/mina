@@ -8,13 +8,14 @@ class AppTextStyle{
 
   static TextStyle screenTitleStyle = GoogleFonts.inter(
     fontSize: 20.sp,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w600,
+    fontStyle: FontStyle.normal,
     color: AppColor.blackColor,
   );
 
   static TextStyle balanceTitleStyle = GoogleFonts.inter(
     fontSize: 20.sp,
-    fontWeight: FontWeight.normal,
+    fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     color: AppColor.incomeStateColor,
   );

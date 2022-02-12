@@ -1,20 +1,21 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mina/app/config/app_text_style.dart';
 import 'package:mina/app/config/app_color.dart';
+import 'package:mina/app/utils/utils.dart';
+import 'package:sizer/sizer.dart';
 import 'components/screen_switch.dart';
 
 class RootPageScreens extends StatefulWidget{
-  RootPageScreens({Key? key}) : super(key: key);
+  const RootPageScreens({Key? key}) : super(key: key);
 
   @override
   State<RootPageScreens> createState() => _RootPageScreensState();
 }
 
 class _RootPageScreensState extends State<RootPageScreens> {
-  String dropdownvalue = 'Dashboard';
+  String dropDownValue = 'Dashboard';
 
   var items = [
     'Dashboard',
@@ -27,53 +28,82 @@ class _RootPageScreensState extends State<RootPageScreens> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.primaryColor,
-        actions:[
-        Padding(
-          padding: const EdgeInsets.fromLTRB(10, 15, 0, 0),
-          child: DropdownButton(
-          // Initial Value
-          value: dropdownvalue,
-          // Down Arrow Icon
-          icon: const Icon(Icons.keyboard_arrow_down),
-          // Array list of items
+        leading:  DropdownButton(
+          value: dropDownValue,
+          icon:  Icon(Icons.keyboard_arrow_down, color: AppColor.blackColor,),
           items: items.map((String items) {
             return DropdownMenuItem(
               value: items,
               child: Text(items,
-              style: GoogleFonts.inter(
-                fontSize: 16.sp,
-                fontWeight: FontWeight.w600,
-                fontStyle: FontStyle.normal,
-                color: AppColor.blackColor,
-              ),
+                  style: AppTextStyle.screenTitleStyle
               ),
             );
           }).toList(),
-          // After selecting the desired option,it will
-          // change button value to selected value
+
           onChanged: (String? newValue) {
             setState(() {
-              dropdownvalue = newValue!;
-
+              dropDownValue = newValue!;
             });
           },
+        ),
+        leadingWidth: 170.w,
+        actions:[
+          SvgPicture.asset(Utils.getIconPath('switch'), width: 24.w,height: 24.h,),
+          //SizedBox(width: 39.w,),
+          PopupMenuButton(
+              icon: SvgPicture.asset(Utils.getIconPath('menu'), width: 24.w,height: 24.h),
+              itemBuilder: (context){
+                return [
+                  const PopupMenuItem<int>(
+                    value: 0,
+                    child: Text("Currency"),
+                  ),
+
+                  const PopupMenuItem<int>(
+                    value: 1,
+                    child:  Text("Cloud Storage"),
+                  ),
+
+                  const PopupMenuItem<int>(
+                    value: 2,
+                    child: Text("Settings"),
+                  ),
+                ];
+              },
+              onSelected:(value){
+                if(value == 0){
+
+                }else if(value == 1){
+
+                }else if(value == 2){
+
+                }
+              }
+          ),
+        ],
+      ),
+        floatingActionButton: SizedBox(
+          width: 56.w,
+          height: 56.h,
+          child: FloatingActionButton(
+            // isExtended: true,
+            child: Icon(Icons.add, color: AppColor.primaryColor,),
+            backgroundColor: AppColor.fabBtnColor,
+            onPressed: () {
+              setState(() {
+
+              });
+            },
           ),
         ),
-
-          pic('switch'),
-          Spacer(),
-          pic('menu'),
-        ],
-
-      ),
-      body: ScreenSwitch(selectedValue: dropdownvalue,)
+      body: ScreenSwitch(selectedValue: dropDownValue,)
     );
   }
 
-  SvgPicture pic(String pic) {
-    return SvgPicture.asset('assets/icons/$pic.svg',
-          height: 20.sp,
-          width: 20.sp,);
-  }
-
+  //  _popMenu({required int value, required String title}){
+  //   return PopupMenuItem<int>(
+  //     value: value,
+  //     child: Text(title, style: AppTextStyle.tagTextStyle, ),
+  //   );
+  // }
 }
