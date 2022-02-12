@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'all_income.dart';
 class ScreenSwitch extends StatelessWidget {
   final String selectedValue;
-
-
   const ScreenSwitch({
     Key? key,
     required this.selectedValue,
@@ -12,6 +10,7 @@ class ScreenSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return LayoutBuilder(
       // If our width is more than 1100 then we consider it a desktop
       builder: (context, constraints) {
@@ -20,7 +19,7 @@ class ScreenSwitch extends StatelessWidget {
         }
         // If width it less then 1100 and more then 650 we consider it as tablet
         else if (selectedValue == 'All Income') {
-          return   Container(color: Colors.blue,);
+          return IncomePage();
         }
         // Or less then that we called it mobile
         else  {
