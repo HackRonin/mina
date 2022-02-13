@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mina/app/config/app_color.dart';
-import 'package:mina/app/config/app_textstyle.dart';
+import 'package:mina/app/config/app_text_style.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:mina/app/utils/utils.dart';
 
 class DetailsBody extends StatelessWidget {
   const DetailsBody({Key? key}) : super(key: key);
@@ -20,31 +22,36 @@ class DetailsBody extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/Framedelete.svg')),
+              icon: SvgPicture.asset(
+                Utils.getIconPath('assets/icons/Framedelete.svg'),
+                height: 24.h,
+                width: 24.w,
+              )),
           IconButton(
               onPressed: () {},
-              icon: SvgPicture.asset('assets/icons/share.svg'))
+              icon:
+                  SvgPicture.asset(Utils.getIconPath('assets/icons/share.svg')))
         ],
         elevation: 0,
       ),
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
+        padding: EdgeInsets.symmetric(horizontal: 16.h),
         child: Column(
           children: [
             const Spacer(flex: 3),
             detailsTitleAndText('Title', 'CashBack Offer - Payme'),
-            const SizedBox(height: 10),
+            SizedBox(height: 16.h),
             detailsTitleAndText('Amount', '\$30'),
-            const SizedBox(height: 10),
+            SizedBox(height: 16.h),
             detailsTitleAndText('Transaction Type', 'Income'),
-            const SizedBox(height: 10),
+            SizedBox(height: 16.h),
             detailsTitleAndText('Tag', 'Entertainment'),
-            const SizedBox(height: 10),
+            SizedBox(height: 16.h),
             detailsTitleAndText('When', 'Sunday, 18 Dec 8:30 AM'),
-            const SizedBox(height: 10),
+            SizedBox(height: 16.h),
             detailsTitleAndText(
                 'Note', 'I got this amount from Payme for recharge'),
-            const SizedBox(height: 10),
+            SizedBox(height: 16.h),
             detailsTitleAndText('Created At', 'Jan 11, 2022, 11:30 AM'),
           ],
         ),
