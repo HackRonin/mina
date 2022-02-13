@@ -4,8 +4,7 @@ import 'package:sizer/sizer.dart';
 
 import 'app_color.dart';
 
-class AppTextStyle{
-
+class AppTextStyle {
   static TextStyle screenTitleStyle = GoogleFonts.inter(
     fontSize: 20.sp,
     fontWeight: FontWeight.normal,
@@ -79,4 +78,10 @@ class AppTextStyle{
     color: AppColor.incomeStateColor,
   );
 
+  static TextStyle detailsTextStyle = GoogleFonts.inter(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    fontStyle: FontStyle.normal,
+    color: AppColor.blackColor,
+  );
 }
