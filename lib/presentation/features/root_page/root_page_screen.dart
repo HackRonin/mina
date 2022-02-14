@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mina/app/config/app_text_style.dart';
 import 'package:mina/app/config/app_color.dart';
 import 'package:mina/app/utils/utils.dart';
+import '../currency/currency_screen.dart';
 import 'components/screen_switch.dart';
 
 class RootPageScreens extends StatefulWidget {
@@ -63,6 +64,7 @@ class _RootPageScreensState extends State<RootPageScreens> {
                     const PopupMenuItem<int>(
                       value: 0,
                       child: Text("Currency"),
+
                     ),
                     const PopupMenuItem<int>(
                       value: 1,
@@ -76,6 +78,10 @@ class _RootPageScreensState extends State<RootPageScreens> {
                 },
                 onSelected: (value) {
                   if (value == 0) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => CurrencyScreen())
+                    );
                   } else if (value == 1) {
                   } else if (value == 2) {}
                 }),
