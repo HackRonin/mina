@@ -11,6 +11,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     color: AppColor.blackColor,
+    decoration: TextDecoration.none
   );
 
   // static TextStyle balanceTitleStyle = GoogleFonts.inter(
@@ -25,6 +26,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w600,
     fontStyle: FontStyle.normal,
     color: AppColor.balanceColor,
+    decoration: TextDecoration.none
   );
   static TextStyle expenseStateStyle = GoogleFonts.inter(
     fontSize: 10.sp,
