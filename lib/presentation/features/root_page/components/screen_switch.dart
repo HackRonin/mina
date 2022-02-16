@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mina/presentation/features/dashboard/dashboard_screen.dart';
+import 'package:mina/presentation/features/expense/expense_screen.dart';
+import '../../income/income_screen.dart';
+
 import 'package:mina/presentation/features/add_transaction_page.dart';
 
 class ScreenSwitch extends StatelessWidget {
@@ -11,16 +15,20 @@ class ScreenSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return LayoutBuilder(
-      // If our width is more than 1100 then we consider it a desktop
       builder: (context, constraints) {
         if (selectedValue == 'All Expense') {
+
           return Container(
             color: Colors.black,
           );
+
+          //return ExpenseScreen();
+
         }
-        // If width it less then 1100 and more then 650 we consider it as tablet
         else if (selectedValue == 'All Income') {
+
           return Container(
             color: Colors.white,
           );
@@ -30,8 +38,14 @@ class ScreenSwitch extends StatelessWidget {
           return Container(
             color: Colors.red,
           );
+
+         // return IncomeScreen();
         }
-      },
+        //else  {
+          return  DashboardScreen();
+
+        }
+
     );
   }
 }

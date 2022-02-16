@@ -13,6 +13,8 @@ class AppPages {
       transitionDuration: transitionDuration,
       // binding: RootBinding(),
     ),
+
     //GetPage(name: name, page: page),
+
   ];
 }
