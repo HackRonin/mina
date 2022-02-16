@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:mina/app/config/app_color.dart';
 import 'package:sizer/sizer.dart';
-
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 

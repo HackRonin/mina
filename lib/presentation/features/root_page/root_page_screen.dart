@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mina/app/config/app_color.dart';
 
+import '../add_transaction_page.dart';
 import 'components/screen_switch.dart';
 
 class RootPageScreens extends StatefulWidget{
@@ -45,13 +46,20 @@ class _RootPageScreensState extends State<RootPageScreens> {
             onChanged: (String? newValue) {
               setState(() {
                 dropdownvalue = newValue!;
-
               });
             },
           ),
         ],
       ),
-      body: ScreenSwitch(selectedValue: dropdownvalue,)
+      body: ScreenSwitch(selectedValue: dropdownvalue,),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (_) => const AddTransaction(),
+          ),
+        ),
+        child: const Icon(Icons.add),
+      ),
     );
   }
 
